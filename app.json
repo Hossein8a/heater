@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Shoe-heater",
+    "name": "Qartal",
     "slug": "Shoe-heater",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,7 +17,13 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ],
+      "package": "com.anonymous.Shoeheater"
     },
     "web": {
       "output": "static",
@@ -25,6 +31,13 @@
     },
     "plugins": [
       "expo-router",
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "neverForLocation": true
+        }
+      ],
       [
         "expo-splash-screen",
         {
@@ -37,6 +50,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "18b824f9-1eea-4c7e-bb7b-ae33ae815c42"
+      }
     }
   }
 }
